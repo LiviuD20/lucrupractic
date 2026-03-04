@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Arena Survival - Joc Canvas 2D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cyber Arena Survival</h1>
+  </header>
+  <main>
+    <section id="menu" class="menu">
+      <button id="startBtn">Start Joc</button>
+      <button id="restartBtn" style="display:none;">Restart</button>
+      <button id="instructionsBtn">Instrucțiuni</button>
+      <div id="instructions" style="display:none;">
+        <p>Controale: WASD/săgeți - mișcare; Spațiu - trage; P - pauză</p>
+        <p>Evită și distruge roboții cyber. Colectează power-ups pentru shield.</p>
+      </div>
+      <button id="toggleMode">Schimbă Mod (Neon/Dark)</button>
+    </section>
+    <section id="gameArea" style="display:none;">
+      <canvas id="gameCanvas"></canvas>
+      <div id="ui">
+        <div>Scor: <span id="score">0</span></div>
+        <div>Nivel: <span id="level">1</span></div>
+        <div>Timp: <span id="timer">0</span>s</div>
+        <div>Vieți: <div id="hpBar"><div id="hpFill"></div></div></div>
+        <div>FPS: <span id="fps">0</span></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Creat de [Numele tău] - 2026</p>
+  </footer>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #0ff; /* Cyan neon */
+  overflow: hidden;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #0ff;
+  animation: neonPulse 2s infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 10px #0ff; }
+  50% { text-shadow: 0 0 20px #0ff, 0 0 30px #f0f; }
+}
+
+.menu {
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  background: #111;
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+button:hover {
+  filter: brightness(1.5) drop-shadow(0 0 10px #0ff);
+  transform: scale(1.1);
+}
+
+#instructions {
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border: 1px solid #0ff;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#gameArea {
+  position: relative;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('assets/background.jpg') no-repeat center/cover; /* Fundal animat? Vezi JS */
+  filter: brightness(0.8) hue-rotate(0deg); /* Implicit neon */
+  transition: filter 0.5s;
+}
+
+canvas.flash {
+  filter: brightness(1.5) blur(2px) drop-shadow(0 0 20px #f00); /* Efect lovitură */
+}
+
+#ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #0ff;
+  text-shadow: 0 0 5px #000;
+}
+
+#hpBar {
+  width: 200px;
+  height: 20px;
+  border: 2px solid #0ff;
+  background: #111;
+  display: inline-block;
+}
+
+#hpFill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #0f0, #ff0); /* HP bar animat */
+  transition: width 0.3s;
+}
+
+body.dark-mode {
+  color: #fff;
+  filter: invert(1) hue-rotate(180deg); /* Mod dark comutabil */
+}
+
+body.dark-mode canvas {
+  filter: brightness(0.5) hue-rotate(180deg);
+}
+
+/* Fundal particule? Gestionat în JS, dar CSS pentru overlay dacă vrei */
